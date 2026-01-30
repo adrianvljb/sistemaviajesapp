@@ -1,11 +1,14 @@
+using SistemaViajesApp.Security;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
 
 namespace SistemaViajesApp
 {
     public partial class LoginForm : Form
     {
+        private readonly AuthService _authService = new AuthService();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -14,71 +17,50 @@ namespace SistemaViajesApp
 
         private void LoginForm_Load(object? sender, EventArgs e)
         {
+            txtContrasena.PasswordChar = '*';
 
+            if (lblMensaje != null)
+                lblMensaje.Text = "";
         }
 
         private void btnLogin_Click(object? sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
-                string.IsNullOrWhiteSpace(txtContrasena.Text))
+            if (lblMensaje != null)
+                lblMensaje.Text = "";
+
+            string usuario = txtUsuario.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasena))
             {
-                MessageBox.Show("Ingrese usuario y contraseña", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MostrarMsg("Ingrese usuario y contraseña.", Color.DarkOrange);
                 return;
             }
 
             try
             {
-                var db = new ConexionDB();
-                using SqlConnection conn = db.GetConnection();
-                conn.Open();
+                string? rol = _authService.ValidarUsuario(usuario, contrasena);
 
-                string sql = @"
-                    SELECT Rol
-                    FROM Usuarios
-                    WHERE Usuario = @Usuario
-                      AND Contrasena = @Contrasena
-                      AND Activo = 1;";
-
-                using SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text.Trim());
-                cmd.Parameters.AddWithValue("@Contrasena", txtContrasena.Text.Trim());
-
-                var resultado = cmd.ExecuteScalar();
-
-                if (resultado is not null)
+                if (!string.IsNullOrWhiteSpace(rol))
                 {
-                    Sesion.Usuario = txtUsuario.Text.Trim();
-                    Sesion.Rol = resultado.ToString()!;
+                    Sesion.Usuario = usuario;
+                    Sesion.Rol = rol;
 
-                    MessageBox.Show(
-                        $"Conexión OK ✅\n\nUsuario: {Sesion.Usuario}\nRol: {Sesion.Rol}",
-                        "Login exitoso",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
+                    // ✅ Prueba de conexión / login: mostrar usuario y rol (como lo querías)
+                    MostrarMsg($"OK ✅ Usuario: {Sesion.Usuario} | Rol: {Sesion.Rol}", Color.Green);
 
-
+                    // ✅ Permite que Program.cs abra el MainForm
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos", "Acceso denegado",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MostrarMsg("Usuario o contraseña incorrectos.", Color.Red);
                 }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(
-                    $"SqlException #{ex.Number}\n{ex.Message}",
-                    "Error SQL",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarMsg("Error: " + ex.Message, Color.Red);
             }
         }
 
@@ -87,10 +69,20 @@ namespace SistemaViajesApp
             Application.Exit();
         }
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
+        // ✅ Puentes por si el Designer quedó apuntando a *_Click_1
+        private void btnLogin_Click_1(object? sender, EventArgs e) => btnLogin_Click(sender, e);
+        private void btnSalir_Click_1(object? sender, EventArgs e) => btnSalir_Click(sender, e);
 
+        private void MostrarMsg(string texto, Color color)
+        {
+            if (lblMensaje == null)
+            {
+                MessageBox.Show(texto);
+                return;
+            }
+
+            lblMensaje.ForeColor = color;
+            lblMensaje.Text = texto;
         }
     }
 }

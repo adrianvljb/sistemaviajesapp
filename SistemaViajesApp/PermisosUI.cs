@@ -14,13 +14,13 @@ namespace SistemaViajesApp
             ToolStripMenuItem mnuSalir
         )
         {
-            // Por defecto: todo deshabilitado (excepto salir)
+            // Por defecto: todo deshabilitado
             mnuEmpleados.Enabled = false;
             mnuTransportistas.Enabled = false;
             mnuViajes.Enabled = false;
             mnuReportes.Enabled = false;
             mnuLogs.Enabled = false;
-            mnuSalir.Enabled = true;
+            mnuSalir.Enabled = true; // siempre
 
             rol = (rol ?? "").Trim().ToLower();
 
@@ -42,14 +42,8 @@ namespace SistemaViajesApp
                     // Logs NO
                     break;
 
-                case "transportista":
-                    mnuViajes.Enabled = true;
-                    mnuReportes.Enabled = true;
-                    // solo lo operativo
-                    break;
-
                 default:
-                    // Rol desconocido → solo salir habilitado
+                    // Rol no autorizado → solo salir
                     break;
             }
         }

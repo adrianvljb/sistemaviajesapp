@@ -34,6 +34,10 @@
             txtContrasena = new TextBox();
             btnLogin = new Button();
             btnSalir = new Button();
+            lblMensaje = new Label();
+            menuStrip1 = new MenuStrip();
+            dsToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -89,20 +93,49 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click_1;
             // 
+            // lblMensaje
+            // 
+            lblMensaje.AutoSize = true;
+            lblMensaje.Location = new Point(340, 126);
+            lblMensaje.Name = "lblMensaje";
+            lblMensaje.Size = new Size(0, 20);
+            lblMensaje.TabIndex = 6;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { dsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.TabIndex = 7;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // dsToolStripMenuItem
+            // 
+            dsToolStripMenuItem.Name = "dsToolStripMenuItem";
+            dsToolStripMenuItem.Size = new Size(38, 24);
+            dsToolStripMenuItem.Text = "ds";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblMensaje);
             Controls.Add(btnSalir);
             Controls.Add(btnLogin);
             Controls.Add(txtContrasena);
             Controls.Add(txtUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "LoginForm";
             Text = "Login";
             Load += LoginForm_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -115,5 +148,8 @@
         private TextBox txtContrasena;
         private Button btnLogin;
         private Button btnSalir;
+        private Label lblMensaje;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem dsToolStripMenuItem;
     }
 }
