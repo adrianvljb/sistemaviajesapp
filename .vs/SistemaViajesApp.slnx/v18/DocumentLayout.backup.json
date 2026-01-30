@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|c:\\users\\lary\\source\\repos\\sistemaviajesapp\\sistemaviajesapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|solutionrelative:sistemaviajesapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|c:\\users\\lary\\source\\repos\\sistemaviajesapp\\sistemaviajesapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|solutionrelative:sistemaviajesapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\LoginForm.cs",
+              "RelativeDocumentMoniker": "SistemaViajesApp\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\LoginForm.cs",
+              "RelativeToolTip": "SistemaViajesApp\\LoginForm.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwFwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T08:45:29.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\LoginForm.cs",
+              "RelativeDocumentMoniker": "SistemaViajesApp\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\LoginForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "SistemaViajesApp\\LoginForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T08:44:23.841Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
