@@ -35,6 +35,7 @@
             mnuReportes = new ToolStripMenuItem();
             mnuLogs = new ToolStripMenuItem();
             mnuSalir = new ToolStripMenuItem();
+            lblUsuarioRol = new StatusStrip();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,15 +85,26 @@
             mnuSalir.Size = new Size(52, 24);
             mnuSalir.Text = "Salir";
             // 
+            // lblUsuarioRol
+            // 
+            lblUsuarioRol.ImageScalingSize = new Size(20, 20);
+            lblUsuarioRol.Location = new Point(0, 428);
+            lblUsuarioRol.Name = "lblUsuarioRol";
+            lblUsuarioRol.Size = new Size(800, 22);
+            lblUsuarioRol.TabIndex = 1;
+            lblUsuarioRol.Text = "statusStrip1";
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblUsuarioRol);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FrmMenuPrincipal";
             Text = "FrmMenuPrincipal";
+            Load += FrmMenuPrincipal_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -108,5 +120,6 @@
         private ToolStripMenuItem mnuReportes;
         private ToolStripMenuItem mnuLogs;
         private ToolStripMenuItem mnuSalir;
+        private StatusStrip lblUsuarioRol;
     }
 }

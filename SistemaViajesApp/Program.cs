@@ -1,17 +1,22 @@
+using System;
+using System.Windows.Forms;
+
 namespace SistemaViajesApp
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
+
+            using (var login = new LoginForm())
+            {
+                if (login.ShowDialog() != DialogResult.OK)
+                    return; // si falla o cancela, cerrar app
+            }
+
+            Application.Run(new FrmMenuPrincipal());
         }
     }
 }

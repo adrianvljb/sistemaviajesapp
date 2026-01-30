@@ -1,57 +1,105 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using SistemaViajesApp.Security;
 
 namespace SistemaViajesApp
 {
-    public static class PermisosUI
+    public partial class FrmMenuPrincipal : Form
     {
-        public static void AplicarPermisos(
-            string rol,
-            ToolStripMenuItem mnuEmpleados,
-            ToolStripMenuItem mnuTransportistas,
-            ToolStripMenuItem mnuViajes,
-            ToolStripMenuItem mnuReportes,
-            ToolStripMenuItem mnuLogs,
-            ToolStripMenuItem mnuSalir
-        )
+        public FrmMenuPrincipal()
         {
-            // Por defecto: todo deshabilitado (excepto salir)
-            mnuEmpleados.Enabled = false;
-            mnuTransportistas.Enabled = false;
-            mnuViajes.Enabled = false;
-            mnuReportes.Enabled = false;
-            mnuLogs.Enabled = false;
-            mnuSalir.Enabled = true;
+            InitializeComponent();
+            this.Load += FrmMenuPrincipal_Load;
+        }
 
-            rol = (rol ?? "").Trim().ToLower();
+        private void FrmMenuPrincipal_Load(object? sender, EventArgs e)
+        {
+            // Asegurar MDI
+            this.IsMdiContainer = true;
 
-            switch (rol)
+            // Mostrar usuario y rol (si usas StatusStrip)
+            if (lblUsuarioRol != null)
             {
-                case "admin":
-                    mnuEmpleados.Enabled = true;
-                    mnuTransportistas.Enabled = true;
-                    mnuViajes.Enabled = true;
-                    mnuReportes.Enabled = true;
-                    mnuLogs.Enabled = true;
-                    break;
-
-                case "gerente":
-                    mnuEmpleados.Enabled = true;
-                    mnuTransportistas.Enabled = true;
-                    mnuViajes.Enabled = true;
-                    mnuReportes.Enabled = true;
-                    // Logs NO
-                    break;
-
-                case "transportista":
-                    mnuViajes.Enabled = true;
-                    mnuReportes.Enabled = true;
-                    // solo lo operativo
-                    break;
-
-                default:
-                    // Rol desconocido → solo salir habilitado
-                    break;
+                lblUsuarioRol.Text = $"Usuario: {Sesion.Usuario} | Rol: {Sesion.Rol}";
             }
+
+            // Aplicar permisos al menú
+            PermisosUI.AplicarPermisos(
+                Sesion.Rol,
+                mnuEmpleados,
+                mnuTransportistas,
+                mnuViajes,
+                mnuReportes,
+                mnuLogs,
+                mnuSalir
+            );
+        }
+
+        // ==========================
+        // EVENTOS DE MENÚ
+        // ==========================
+
+        private void mnuEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmEmpleados());
+        }
+
+        private void mnuTransportistas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmTransportistas());
+        }
+
+        private void mnuViajes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmViajes());
+        }
+
+        private void mnuReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmReportes());
+        }
+
+        private void mnuLogs_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmLogs());
+        }
+
+        private void mnuSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // ==========================
+        // MÉTODO CENTRAL PARA ABRIR FORMS (MDI)
+        // ==========================
+        private void AbrirFormulario(Form frm)
+        {
+            // Evitar abrir el mismo form dos veces
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == frm.GetType())
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+
+            frm.MdiParent = this;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.Show();
+        }
+
+        private void FrmMenuPrincipal_Load_1(object sender, EventArgs e)
+        {
+            mnuEmpleados.Click += mnuEmpleados_Click;
+            mnuTransportistas.Click += mnuTransportistas_Click;
+            mnuViajes.Click += mnuViajes_Click;
+            mnuReportes.Click += mnuReportes_Click;
+            mnuLogs.Click += mnuLogs_Click;
+            mnuSalir.Click += mnuSalir_Click;
+
+            // MDI
+            this.IsMdiContainer = true;
         }
     }
 }
