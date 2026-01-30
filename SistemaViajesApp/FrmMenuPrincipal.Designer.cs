@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             mnuEmpleados = new ToolStripMenuItem();
             mnuTransportistas = new ToolStripMenuItem();
@@ -36,7 +37,9 @@
             mnuLogs = new ToolStripMenuItem();
             mnuSalir = new ToolStripMenuItem();
             lblUsuarioRol = new StatusStrip();
+            conexionDBBindingSource = new BindingSource(components);
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)conexionDBBindingSource).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -84,6 +87,7 @@
             mnuSalir.Name = "mnuSalir";
             mnuSalir.Size = new Size(52, 24);
             mnuSalir.Text = "Salir";
+            mnuSalir.Click += mnuSalir_Click_1;
             // 
             // lblUsuarioRol
             // 
@@ -93,6 +97,10 @@
             lblUsuarioRol.Size = new Size(800, 22);
             lblUsuarioRol.TabIndex = 1;
             lblUsuarioRol.Text = "statusStrip1";
+            // 
+            // conexionDBBindingSource
+            // 
+            conexionDBBindingSource.DataSource = typeof(ConexionDB);
             // 
             // FrmMenuPrincipal
             // 
@@ -107,6 +115,7 @@
             Load += FrmMenuPrincipal_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)conexionDBBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +130,6 @@
         private ToolStripMenuItem mnuLogs;
         private ToolStripMenuItem mnuSalir;
         private StatusStrip lblUsuarioRol;
+        private BindingSource conexionDBBindingSource;
     }
 }

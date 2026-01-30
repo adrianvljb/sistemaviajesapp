@@ -66,7 +66,9 @@ namespace SistemaViajesApp
 
         private void mnuSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Sesion.Cerrar();
+            Hide();
+            new LoginForm().Show();
         }
 
         // ==========================
@@ -100,6 +102,11 @@ namespace SistemaViajesApp
 
             // MDI
             this.IsMdiContainer = true;
+        }
+
+        private void mnuSalir_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
