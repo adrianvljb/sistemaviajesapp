@@ -60,7 +60,7 @@ C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-w
 C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.sourcelink.json
 C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.FrmEmpleados.resources
 C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.FrmLogs.resources
-C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.FrmReportes.resources
 C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.FrmTransportistas.resources
 C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.FrmViajesIngreso.resources
 C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.FrmViajesListado.resources
+C:\Users\Lary\source\repos\SistemaViajesApp\SistemaViajesApp\obj\Debug\net10.0-windows\SistemaViajesApp.FrmPagoMotorista.resources

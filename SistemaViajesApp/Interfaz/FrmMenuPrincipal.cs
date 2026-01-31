@@ -33,6 +33,23 @@ namespace SistemaViajesApp
             timerHora.Interval = 1000;
             timerHora.Tick += TimerHora_Tick;
             timerHora.Start();
+
+            WireMenuEvents();
+        }
+
+        private void WireMenuEvents()
+        {
+            mnuEmpleados.Click -= mnuEmpleados_Click;
+            mnuEmpleados.Click += mnuEmpleados_Click;
+
+            mnuTransportistas.Click -= mnuTransportistas_Click;
+            mnuTransportistas.Click += mnuTransportistas_Click;
+
+            mnuReportes.Click -= mnuReportes_Click;
+            mnuReportes.Click += mnuReportes_Click;
+
+            mnuLogs.Click -= mnuLogs_Click;
+            mnuLogs.Click += mnuLogs_Click;
         }
 
         private void TimerHora_Tick(object? sender, EventArgs e)
@@ -52,7 +69,7 @@ namespace SistemaViajesApp
 
         private void mnuReportes_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmReportes());
+            AbrirFormulario(new FrmPagoMotorista());
         }
 
         private void mnuLogs_Click(object sender, EventArgs e)
@@ -94,8 +111,6 @@ namespace SistemaViajesApp
             frm.Show();
         }
 
-
-        //metodos para evitar errores mios cuando no se crea el evento click
         private void mnuViajesIngresar_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmViajesIngreso());
@@ -105,24 +120,19 @@ namespace SistemaViajesApp
         {
             AbrirFormulario(new FrmViajesListado());
         }
-        
 
         private void mnuSalir_Click_1(object sender, EventArgs e)
         {
             mnuSalir_Click(sender, e);
         }
+
         private void FrmMenuPrincipal_Load_1(object sender, EventArgs e)
         {
             FrmMenuPrincipal_Load(sender, e);
         }
+
         
-
-
-
-
-
-
-
-
     }
+
+   
 }

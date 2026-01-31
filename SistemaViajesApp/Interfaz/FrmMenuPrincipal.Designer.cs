@@ -41,11 +41,11 @@ namespace SistemaViajesApp
             mnuLogs = new ToolStripMenuItem();
             mnuSalir = new ToolStripMenuItem();
             lblUsuarioRol = new StatusStrip();
-            conexionDBBindingSource = new BindingSource(components);
             lblUsuario = new ToolStripStatusLabel();
             lblRol = new ToolStripStatusLabel();
             lblFecha = new ToolStripStatusLabel();
             lblHora = new ToolStripStatusLabel();
+            conexionDBBindingSource = new BindingSource(components);
             timerHora = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
             lblUsuarioRol.SuspendLayout();
@@ -100,6 +100,7 @@ namespace SistemaViajesApp
             mnuReportes.Name = "mnuReportes";
             mnuReportes.Size = new Size(82, 24);
             mnuReportes.Text = "Reportes";
+            
             // 
             // mnuLogs
             // 
@@ -124,10 +125,6 @@ namespace SistemaViajesApp
             lblUsuarioRol.TabIndex = 1;
             lblUsuarioRol.Text = "statusStrip1";
             // 
-            // conexionDBBindingSource
-            // 
-            conexionDBBindingSource.DataSource = typeof(ConexionDB);
-            // 
             // lblUsuario
             // 
             lblUsuario.Name = "lblUsuario";
@@ -147,6 +144,10 @@ namespace SistemaViajesApp
             // 
             lblHora.Name = "lblHora";
             lblHora.Size = new Size(0, 16);
+            // 
+            // conexionDBBindingSource
+            // 
+            conexionDBBindingSource.DataSource = typeof(ConexionDB);
             // 
             // timerHora
             // 
