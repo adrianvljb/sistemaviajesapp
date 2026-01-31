@@ -28,7 +28,7 @@ Transportistas
 Viajes realizados
 Usuarios del sistema y roles
 Registros de actividad (logs)
-El sistema cuenta con control de acceso por roles, conexión a SQL Server, formularios modulares y validacones básicas para asegurar la integridad de la información.
+El sistema cuenta con control de acceso por roles, conexión a SQL Server, formularios modulares y validaciones básicas para asegurar la integridad de la información.
 
 
 Objetivo del sistema
