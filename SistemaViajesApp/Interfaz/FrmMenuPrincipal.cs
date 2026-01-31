@@ -9,21 +9,13 @@ namespace SistemaViajesApp
         public FrmMenuPrincipal()
         {
             InitializeComponent();
-            this.Load += FrmMenuPrincipal_Load;
+            Load += FrmMenuPrincipal_Load;
         }
 
         private void FrmMenuPrincipal_Load(object? sender, EventArgs e)
         {
-            // Asegurar MDI
-            this.IsMdiContainer = true;
+            IsMdiContainer = true;
 
-            // Mostrar usuario y rol (si usas StatusStrip)
-            if (lblUsuarioRol != null)
-            {
-                lblUsuarioRol.Text = $"Usuario: {Sesion.Usuario} | Rol: {Sesion.Rol}";
-            }
-
-            // Aplicar permisos al menú
             PermisosUI.AplicarPermisos(
                 Sesion.Rol,
                 mnuEmpleados,
@@ -33,11 +25,20 @@ namespace SistemaViajesApp
                 mnuLogs,
                 mnuSalir
             );
+
+            lblUsuario.Text = $"Usuario: {Sesion.Usuario}";
+            lblRol.Text = $"Rol: {Sesion.Rol}";
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            timerHora.Interval = 1000;
+            timerHora.Tick += TimerHora_Tick;
+            timerHora.Start();
         }
 
-        // ==========================
-        // EVENTOS DE MENÚ
-        // ==========================
+        private void TimerHora_Tick(object? sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
 
         private void mnuEmpleados_Click(object sender, EventArgs e)
         {
@@ -47,11 +48,6 @@ namespace SistemaViajesApp
         private void mnuTransportistas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmTransportistas());
-        }
-
-        private void mnuViajes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FrmViajes());
         }
 
         private void mnuReportes_Click(object sender, EventArgs e)
@@ -64,20 +60,27 @@ namespace SistemaViajesApp
             AbrirFormulario(new FrmLogs());
         }
 
+        private void mnuViajesIngresar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmViajesIngreso());
+        }
+
+        private void mnuViajesListado_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmViajesListado());
+        }
+
         private void mnuSalir_Click(object sender, EventArgs e)
         {
+            timerHora.Stop();
             Sesion.Cerrar();
             Hide();
             new LoginForm().Show();
         }
 
-        // ==========================
-        // MÉTODO CENTRAL PARA ABRIR FORMS (MDI)
-        // ==========================
         private void AbrirFormulario(Form frm)
         {
-            // Evitar abrir el mismo form dos veces
-            foreach (Form f in this.MdiChildren)
+            foreach (Form f in MdiChildren)
             {
                 if (f.GetType() == frm.GetType())
                 {
@@ -91,22 +94,35 @@ namespace SistemaViajesApp
             frm.Show();
         }
 
-        private void FrmMenuPrincipal_Load_1(object sender, EventArgs e)
-        {
-            mnuEmpleados.Click += mnuEmpleados_Click;
-            mnuTransportistas.Click += mnuTransportistas_Click;
-            mnuViajes.Click += mnuViajes_Click;
-            mnuReportes.Click += mnuReportes_Click;
-            mnuLogs.Click += mnuLogs_Click;
-            mnuSalir.Click += mnuSalir_Click;
 
-            // MDI
-            this.IsMdiContainer = true;
+        //metodos para evitar errores mios cuando no se crea el evento click
+        private void mnuViajesIngresar_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmViajesIngreso());
         }
+
+        private void mnuViajesListado_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmViajesListado());
+        }
+        
 
         private void mnuSalir_Click_1(object sender, EventArgs e)
         {
-
+            mnuSalir_Click(sender, e);
         }
+        private void FrmMenuPrincipal_Load_1(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal_Load(sender, e);
+        }
+        
+
+
+
+
+
+
+
+
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SistemaViajesApp
+﻿using SistemaViajesApp;
+
+namespace SistemaViajesApp
 {
     partial class FrmEmpleados
     {
