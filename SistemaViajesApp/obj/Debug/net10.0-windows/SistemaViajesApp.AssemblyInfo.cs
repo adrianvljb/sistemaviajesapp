@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaViajesApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da6e0f80b4a11c3c0e563bd2b1eccaeb3fc1a468")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63c6367063cd605d55a9c57ff0a6466d8a714804")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaViajesApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaViajesApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

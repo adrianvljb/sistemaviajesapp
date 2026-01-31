@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|c:\\users\\lary\\source\\repos\\sistemaviajesapp\\sistemaviajesapp\\interfaz\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|solutionrelative:sistemaviajesapp\\interfaz\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|c:\\users\\lary\\source\\repos\\sistemaviajesapp\\sistemaviajesapp\\interfaz\\frmlogs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|solutionrelative:sistemaviajesapp\\interfaz\\frmlogs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|c:\\users\\lary\\source\\repos\\sistemaviajesapp\\sistemaviajesapp\\interfaz\\frmlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C62BAFA-547D-A126-734E-4742E50294D1}|SistemaViajesApp\\SistemaViajesApp.csproj|solutionrelative:sistemaviajesapp\\interfaz\\frmlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmMenuPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\Interfaz\\FrmMenuPrincipal.cs",
-              "RelativeDocumentMoniker": "SistemaViajesApp\\Interfaz\\FrmMenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\Interfaz\\FrmMenuPrincipal.cs",
-              "RelativeToolTip": "SistemaViajesApp\\Interfaz\\FrmMenuPrincipal.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAAwIUAAAAIAAAAAAAAAA==",
+              "Title": "FrmLogs.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\Interfaz\\FrmLogs.Designer.cs",
+              "RelativeDocumentMoniker": "SistemaViajesApp\\Interfaz\\FrmLogs.Designer.cs",
+              "ToolTip": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\Interfaz\\FrmLogs.Designer.cs",
+              "RelativeToolTip": "SistemaViajesApp\\Interfaz\\FrmLogs.Designer.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAANUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T04:07:09.939Z",
+              "WhenOpened": "2026-01-31T05:04:06.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmLogs.cs",
+              "DocumentMoniker": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\Interfaz\\FrmLogs.cs",
+              "RelativeDocumentMoniker": "SistemaViajesApp\\Interfaz\\FrmLogs.cs",
+              "ToolTip": "C:\\Users\\Lary\\source\\repos\\SistemaViajesApp\\SistemaViajesApp\\Interfaz\\FrmLogs.cs",
+              "RelativeToolTip": "SistemaViajesApp\\Interfaz\\FrmLogs.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAAwLgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T05:03:32.36Z",
               "EditorCaption": ""
             }
           ]
